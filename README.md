@@ -1,7 +1,5 @@
 # UI-UX-Design-Mobile-Screen-First-Turkey
-<div *ngIf="this.loader.getLoading()" class="cssload-container">
-    <div class="cssload-speeding-wheel"></div>
-</div>
+
 # Global loading spinner to an Angular application
 
 Global loading spinner to an Angular application (2023 Quick Tutorial)
@@ -235,4 +233,22 @@ What do you think of this global loading spinner? Is there any way it could be i
 Or maybe you know of an easier or quicker way?
 
 Please let me know in the comments below.
+
+
+function maskEmail(email: string): string {
+  const atIndex = email.indexOf('@');
+  
+  if (atIndex <= 1) {
+    return email; // Return the original email if it doesn't have characters to mask
+  }
+  
+  const maskedPart = email.substring(1, atIndex).replace(/./g, '*');
+  const maskedEmail = `*${maskedPart}${email.substring(atIndex)}`;
+  
+  return maskedEmail;
+}
+
+const email = 'ola@example.com';
+const maskedEmail = maskEmail(email);
+console.log(maskedEmail);
 
