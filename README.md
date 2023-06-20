@@ -1,5 +1,7 @@
 # UI-UX-Design-Mobile-Screen-First-Turkey
-
+<div *ngIf="this.loader.getLoading()" class="cssload-container">
+    <div class="cssload-speeding-wheel"></div>
+</div>
 # Global loading spinner to an Angular application
 
 Global loading spinner to an Angular application (2023 Quick Tutorial)
