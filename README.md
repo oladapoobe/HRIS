@@ -282,5 +282,14 @@ function getInitials(fullName: string): string {
   return initials.join('');
 }
 
+const currentDate = new Date();
 
+const options = { 
+  weekday: 'long', 
+  year: 'numeric', 
+  month: 'short', 
+  day: 'numeric' 
+};
+
+const formattedDate = currentDate.toLocaleDateString('en-US', options);
 
