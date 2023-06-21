@@ -252,3 +252,29 @@ const email = 'ola@example.com';
 const maskedEmail = maskEmail(email);
 console.log(maskedEmail);
 
+.........
+
+npm install crypto-js
+import { AES } from 'crypto-js';
+encryptData(data: string, key: string): string {
+  return AES.encrypt(data, key).toString();
+}
+
+decryptData(encryptedData: string, key: string): string {
+  const decryptedBytes = AES.decrypt(encryptedData, key);
+  return decryptedBytes.toString(CryptoJS.enc.Utf8);
+}
+
+// Encrypt and store data in local storage
+const dataToEncrypt = 'Secret data';
+const encryptionKey = 'YourEncryptionKey';
+const encryptedData = this.encryptData(dataToEncrypt, encryptionKey);
+localStorage.setItem('encryptedData', encryptedData);
+
+// Retrieve and decrypt data from local storage
+const retrievedData = localStorage.getItem('encryptedData');
+const decryptedData = this.decryptData(retrievedData, encryptionKey);
+console.log(decryptedData); // Outputs: Secret data
+
+
+
