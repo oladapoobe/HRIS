@@ -276,5 +276,11 @@ const retrievedData = localStorage.getItem('encryptedData');
 const decryptedData = this.decryptData(retrievedData, encryptionKey);
 console.log(decryptedData); // Outputs: Secret data
 
+function getInitials(fullName: string): string {
+  const names = fullName.split(' ');
+  const initials = names.map(name => name.charAt(0).toUpperCase());
+  return initials.join('');
+}
+
 
 
