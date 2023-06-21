@@ -282,14 +282,36 @@ function getInitials(fullName: string): string {
   return initials.join('');
 }
 
+import { Component } from '@angular/core';
+import { DatePipe } from '@angular/common';
+Save to grepper
+Inject the DatePipe in your component's constructor:
+typescript
+Copy code
+constructor(private datePipe: DatePipe) { }
+Save to grepper
+Format the current date using the DatePipe in your component:
+typescript
+Copy code
 const currentDate = new Date();
+const formattedDate = this.datePipe.transform(currentDate, 'EEEE, MMM d, y');
 
-const options = { 
-  weekday: 'long', 
-  year: 'numeric', 
-  month: 'short', 
-  day: 'numeric' 
-};
+console.log(formattedDate); // Outputs: Tuesday, Mar 31, 2023
+Save to grepper
+In this example, DatePipe is injected into the component's constructor as a dependency. Then, the transform() method is used to format the current date (currentDate) according to the specified format 'EEEE, MMM d, y'.
 
-const formattedDate = currentDate.toLocaleDateString('en-US', options);
+The format string 'EEEE, MMM d, y' corresponds to:
+
+'EEEE': Full weekday name (e.g., "Tuesday").
+'MMM': Abbreviated month name (e.g., "Mar").
+'d': Day of the month (e.g., "31").
+'y': Full year (e.g., "2023").
+Make sure to include the DatePipe
+
+
+
+
+
+
+
 
