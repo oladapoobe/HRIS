@@ -308,7 +308,9 @@ The format string 'EEEE, MMM d, y' corresponds to:
 'y': Full year (e.g., "2023").
 Make sure to include the DatePipe
 
-
+Validators.pattern(/^[a-zA-Z0-9\s]+$/)
+Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+value.replace(/[<>&'"]/g, '');
 
 
 
