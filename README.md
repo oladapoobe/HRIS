@@ -312,7 +312,7 @@ Validators.pattern(/^[a-zA-Z0-9\s]+$/)
 Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
 value.replace(/[<>&'"]/g, '');
 
-
+/^\d+$/
 
 
 
