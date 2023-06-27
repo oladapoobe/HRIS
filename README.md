@@ -315,5 +315,66 @@ value.replace(/[<>&'"]/g, '');
 /^\d+$/
 
 
+export class OnboardingProcess {
+  name: string;
+  email: string;
+  accountName: string;
+  accountNumber: string;
+  rim: string;
+  rcNumber: string;
+  tin: string;
+  companyType: string;
+  address: string;
+  accounts: Account[];
+  users: User[];
+
+  constructor() {
+    this.name = '';
+    this.email = '';
+    this.accountName = '';
+    this.accountNumber = '';
+    this.rim = '';
+    this.rcNumber = '';
+    this.tin = '';
+    this.companyType = '';
+    this.address = '';
+    this.accounts = [new Account()];
+    this.users = [new User()];
+  }
+}
+
+export class Account {
+  accountNumber: string;
+  accountName: string;
+  currency: string;
+  accountClass: string;
+  customerNumber: string;
+
+  constructor() {
+    this.accountNumber = '';
+    this.accountName = '';
+    this.currency = '';
+    this.accountClass = '';
+    this.customerNumber = '';
+  }
+}
+
+export class User {
+  username: string;
+  firstname: string;
+  lastname: string;
+  phone: string;
+  email: string;
+  appRoleId: number;
+
+  constructor() {
+    this.username = '';
+    this.firstname = '';
+    this.lastname = '';
+    this.phone = '';
+    this.email = '';
+    this.appRoleId = 0;
+  }
+}
 
 
